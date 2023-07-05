@@ -16,6 +16,7 @@
 			</ul>
 		</nav>
 	</div>
+	<hr>
 </template>
 
 <script setup lang="ts"></script>

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div  class="container">
 	<h2>List Hotel</h2>
 		<div class="filters">
 			<label for="customerType">Customer Type:</label>

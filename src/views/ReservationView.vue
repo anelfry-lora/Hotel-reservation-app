@@ -1,22 +1,35 @@
 <template>
-	<h2>Reservation {{ route.params.name }}</h2>
-	<div class="filters">
-		<label for="customerType">Customer Type:</label>
-		<select id="customerType" v-model="customerType">
-			<option value="regular">Regular</option>
-			<option value="reward">Reward</option>
-		</select>
+	<div class="container">
+		<h2>Reservation {{ route.params.name }}</h2>
+		<div class="filters">
+			<label for="customerType">Customer Type:</label>
+			<select id="customerType" v-model="customerType">
+				<option value="regular">Regular</option>
+				<option value="reward">Reward</option>
+			</select>
 
-		<label for="date1" class="form-date-label">From:</label>
-		<input class="form-date-input" type="date" id="date1" v-model="date1" />
-		<label for="date2" class="form-date-label">To:</label>
-		<input class="form-date-input" type="date" id="date2" v-model="date2" />
-	</div>
+			<label for="date1" class="form-date-label">From:</label>
+			<input
+				class="form-date-input"
+				type="date"
+				id="date1"
+				v-model="date1" />
+			<label for="date2" class="form-date-label">To:</label>
+			<input
+				class="form-date-input"
+				type="date"
+				id="date2"
+				v-model="date2" />
+		</div>
 
-	<div class="cards">
-		<HotelCard :type="customerType" :hotel="findHotel[0]" :reservation="true"/>
+		<div class="cards">
+			<HotelCard
+				:type="customerType"
+				:hotel="findHotel[0]"
+				:reservation="true" />
+		</div>
+		<button @click="getReservation()">Reservar</button>
 	</div>
-	<button @click="getReservation()">Reservar</button>
 </template>
 
 <script setup lang="ts">
@@ -66,8 +79,6 @@ store.setCheapestHotel(findHotel[0]);
 const getReservation = () => {
 	console.log(store.hotels);
 };
-
-
 </script>
 
 <style scoped></style>
